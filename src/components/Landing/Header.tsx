@@ -14,15 +14,15 @@ const Header = () => {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          <a href="#" className="text-muted-foreground hover:text-foreground">
+          <Link href="#how-it-works" className="text-muted-foreground hover:text-foreground">
             How it Works
-          </a>
-          <a href="#" className="text-muted-foreground hover:text-foreground">
+          </Link>
+          <Link href="#pricing" className="text-muted-foreground hover:text-foreground">
             Pricing
-          </a>
-          <a href="#" className="text-muted-foreground hover:text-foreground">
-            About
-          </a>
+          </Link>
+          <Link href="#about" className="text-muted-foreground hover:text-foreground">
+            About Us
+          </Link>
         </div>
 
         <div className="flex items-center gap-3">
