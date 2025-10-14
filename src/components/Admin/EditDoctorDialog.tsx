@@ -105,7 +105,7 @@ const EditDoctorDialog = ({
                             <Select
                                 value={editingDoctor.gender || ""}
                                 onValueChange={(value) =>
-                                setEditingDoctor({ ...editingDoctor, gender: value as Gender })
+                                    setEditingDoctor({ ...editingDoctor, gender: value as Gender })
                                 }
                             >
                                 <SelectTrigger>
@@ -127,11 +127,11 @@ const EditDoctorDialog = ({
                                 }
                             >
                                 <SelectTrigger>
-                                <SelectValue />
+                                    <SelectValue />
                                 </SelectTrigger>
                                 <SelectContent>
-                                <SelectItem value="active">Active</SelectItem>
-                                <SelectItem value="inactive">Inactive</SelectItem>
+                                    <SelectItem value="active">Active</SelectItem>
+                                    <SelectItem value="inactive">Inactive</SelectItem>
                                 </SelectContent>
                             </Select>
                         </div>
@@ -141,14 +141,14 @@ const EditDoctorDialog = ({
 
             <DialogFooter>
                 <Button variant="outline" onClick={handleClose}>
-                Cancel
+                    Cancel
                 </Button>
                 <Button
-                onClick={handleSave}
-                className="bg-primary hover:bg-primary/90"
-                disabled={updateDoctorMutation.isPending}
+                    onClick={handleSave}
+                    className="bg-primary hover:bg-primary/90"
+                    disabled={updateDoctorMutation.isPending}
                 >
-                {updateDoctorMutation.isPending ? "Saving..." : "Save Changes"}
+                    {updateDoctorMutation.isPending ? "Saving..." : "Save Changes"}
                 </Button>
             </DialogFooter>
         </DialogContent>
