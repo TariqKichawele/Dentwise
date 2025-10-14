@@ -8,6 +8,7 @@ import { useGetDoctors } from '@/hooks/use-doctor';
 import { useGetAppointments } from '@/hooks/use-appointments';
 import AdminStats from '@/components/Admin/AdminStats';
 import DoctorsManagement from '@/components/Admin/DoctorsManagement';
+import RecentAppointments from '@/components/Admin/RecentAppointments';
 
 const AdminDashboard = () => {
     const { user } = useUser();
@@ -65,7 +66,8 @@ const AdminDashboard = () => {
 
             <DoctorsManagement />
 
-            RecentAppointments
+            <RecentAppointments />
+
         </div>
     </div>
   )
