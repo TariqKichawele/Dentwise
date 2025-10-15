@@ -7,7 +7,6 @@ import { PricingTable } from '@clerk/nextjs';
 
 const Pro = async () => {
     const user = await currentUser();
-
     if (!user) redirect("/");
 
   return (
