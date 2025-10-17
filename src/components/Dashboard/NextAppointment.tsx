@@ -8,6 +8,7 @@ import { CalendarIcon, ClockIcon, UserIcon } from 'lucide-react';
 const NextAppointment = async () => {
     const appointments = await getUserAppointments();
 
+    // Filter upcoming appointments and only show confirmed ones
     const upcomingAppointments = 
         appointments.filter((appointment) => {
             const appointmentDate = parseISO(appointment.date);

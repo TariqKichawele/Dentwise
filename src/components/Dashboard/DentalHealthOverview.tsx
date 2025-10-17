@@ -6,9 +6,12 @@ import Link from 'next/link'
 import { format } from 'date-fns'
 import React from 'react'
 import { getUserAppointmentsStats } from '@/lib/actions/appointments'
+import { redirect } from 'next/navigation'
 
 const DentalHealthOverview = async () => {
     const user = await currentUser();
+    if (!user) redirect("/");
+    
     const appointmentStats = await getUserAppointmentsStats();
 
   return (
