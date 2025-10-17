@@ -54,7 +54,7 @@ export async function getUserAppointments() {
         const user = await prisma.user.findUnique({ where: { clerkId: userId }});
         if (!user) throw new Error("User not found");
 
-        const appointmentss = await prisma.appointment.findMany({
+        const appointments = await prisma.appointment.findMany({
             where: { userId: user.id },
             include: {
                 user: { select: { firstName: true, lastName: true, email: true }},
@@ -63,7 +63,7 @@ export async function getUserAppointments() {
             orderBy: [{ date: "asc"}, { time: "asc" }]
         });
 
-        return appointmentss.map(transformAppointment);
+        return appointments.map(transformAppointment);
     } catch (error) {
         console.error("Error fetching user appointments:", error);
         throw new Error("Failed to fetch user appointments");

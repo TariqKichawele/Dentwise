@@ -1,4 +1,4 @@
-import { useGetAppointments } from '@/hooks/use-appointments';
+import { useGetAppointments, useUpdateAppointmentStatus } from '@/hooks/use-appointments';
 import React from 'react'
 import { Badge } from '../ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
@@ -9,6 +9,7 @@ import { Button } from '../ui/button';
 
 const RecentAppointments = () => {
     const { data: appointments = [], isLoading: isLoadingAppointments } = useGetAppointments();
+    const updateAppointmentStatusMutation = useUpdateAppointmentStatus();
 
     const getStatusBadge = (status: string) => {
         switch (status) {
@@ -22,7 +23,9 @@ const RecentAppointments = () => {
     }
 
     const handleToggleAppointmentStatus = (appointmentId: string) => {
-        console.log(`Toggling status for appointment: ${appointmentId}`);
+        const appointment = appointments.find((appointment) => appointment.id === appointmentId);
+        const newStatus = appointment?.status === "CONFIRMED" ? "COMPLETED" : "CONFIRMED";
+        updateAppointmentStatusMutation.mutate({ id: appointmentId, status: newStatus });
     };
 
   return (

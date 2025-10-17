@@ -11,8 +11,8 @@ import {
 
 export function useGetAppointments() {
     const result = useQuery({
-        queryKey: ["getAppointments"],
-        queryFn: getAppointments
+      queryKey: ["getAppointments"],
+      queryFn: getAppointments
     });
 
     return result;
@@ -39,16 +39,16 @@ export function useBookAppointment() {
 }
   
   // Get user-specific appointments
-  export function useUserAppointments() {
+export function useUserAppointments() {
     const result = useQuery({
       queryKey: ["getUserAppointments"],
       queryFn: getUserAppointments,
     });
   
     return result;
-  }
+}
   
-  export function useUpdateAppointmentStatus() {
+export function useUpdateAppointmentStatus() {
     const queryClient = useQueryClient();
   
     return useMutation({
@@ -58,4 +58,4 @@ export function useBookAppointment() {
       },
       onError: (error) => console.error("Failed to update appointment:", error),
     });
-  }
+ }
