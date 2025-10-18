@@ -6,7 +6,7 @@ import { currentUser } from "@clerk/nextjs/server";
 export async function syncUser() {
     try {
         const user = await currentUser();
-        if (!user) throw new Error("User not found");
+        if (!user) return null;
         
         const userExists = await prisma.user.findUnique({
             where: { clerkId: user.id },

@@ -27,6 +27,7 @@ const BookingConfirmationStep = ({
     onConfirm,
 }: BookingConfirmationStepProps) => {
     const appointmentType = APPOINTMENT_TYPES.find((type) => type.id === selectedType);
+    
 
   return (
     <div className="space-y-6">
