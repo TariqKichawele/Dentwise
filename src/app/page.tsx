@@ -12,9 +12,8 @@ import { redirect } from "next/navigation";
 export default async function Home() {
   const user = await currentUser();
 
-  await syncUser();
-
   if (user) {
+    await syncUser();
     redirect("/dashboard");
   }
 
